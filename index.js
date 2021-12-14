@@ -1,6 +1,7 @@
 function submitInfo() {
   const username = document.querySelector("#user").value;
   const password = document.querySelector("#pass").value;
+  alert(password)
   if ((username == "username") & (password == "password")) {
     alert("ok")
   } else if ((username == "") || (password == "")) {
