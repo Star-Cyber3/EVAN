@@ -1,5 +1,3 @@
-document.querySelector("#submit").addEventListener('click', submitInfo)
-
 function submitInfo() {
   let username = stringToHash(document.querySelector("#user").value);
   let password = stringToHash(document.querySelector("#pass").value);
