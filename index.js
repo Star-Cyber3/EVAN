@@ -1,22 +1,30 @@
 let failedAttempts = 0
 
+function init() {
+  let isSignedIn = getCookie("signIn")
+  if (isSignedIn == "correct") {
+    location.assign("actualPage/index.html")
+  }
+}
+
 function submitInfo() {
   let signIn = getCookie("signIn");
-  alert(signIn); //test
+  // alert(signIn);
 if ((failedAttempts <= 3) || (signIn == "failed")) {
     let username = stringToHash(document.querySelector("#user").value);
     let password = stringToHash(document.querySelector("#pass").value);
-    alert("password hashed is: " + password);
-    alert("username hashed is: " + username);
+    // alert("password hashed is: " + password);
+    // alert("username hashed is: " + username);
     if ((username == "284393587") & (password == "-1141017834")) {
-      alert("ok")
       setCookie("signIn", "correct", 1);
+      location.assign("actualPage/index.html")
     } else if ((username == "0") || (password == "0")) {
       alert("Error: Please fill in all fields")
       document.querySelector("#pass").value = "";
     } else {
       alert("Error: Username or Password is invalid")
       document.querySelector("#pass").value = "";
+      failedAttempts++
     }
   } else {
     setCookie("signIn", "failed", 0.04166666666666666666666666666667);
