@@ -10,7 +10,7 @@ function init() {
 function submitInfo() {
   let signIn = getCookie("signIn");
   // alert(signIn);
-if ((failedAttempts <= 3) || (signIn == "failed")) {
+if ((failedAttempts <= 2) || (signIn !== "failed")) {
     let username = stringToHash(document.querySelector("#user").value);
     let password = stringToHash(document.querySelector("#pass").value);
     // alert("password hashed is: " + password);
