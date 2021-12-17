@@ -4,19 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PASSWORD</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Log In</title>
 </head>
 
-<body>
-  <h1>PASSWORD</h1>
+<body onload="init();">
+  <h1>Log In</h1>
   <fieldset>
     <legend>Log In</legend>
     <label for="user">Username: </label><br>
     <input type="text" id="user">
     <br /><label for="pass">Password: </label><br />
     <input type="password" id="pass">
-    <input type="submit" id="submit" />
+    <input type="submit" onclick="submitInfo();" id="submit" />
   </fieldset>
+  <div>
+    <script src="index.js"></script>
+  </div>
 </body>
 
 </html>

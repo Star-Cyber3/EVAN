@@ -1,0 +1,13 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 8
+    },
+    "rules": {
+      "no-unused-vars": [2, {"vars": "local", "args": "after-used"}]
+    }
+}
