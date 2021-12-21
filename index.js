@@ -3,9 +3,6 @@ let failedAttempts = 0
 function init() {
   document.querySelector("#user").addEventListener('keydown', enter);
   document.querySelector("#pass").addEventListener('keydown', enter);
-  let isSignedIn = getCookie("signIn")
-  if (isSignedIn == "correct") {
-    location.assign("actualPage/index.html")
   }
 }
 
