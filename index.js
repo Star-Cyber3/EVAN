@@ -21,9 +21,9 @@ if ((failedAttempts <= 2) || (signIn !== "failed")) {
     // alert("username hashed is: " + username);
     if ((username == "284393587") & (password == "-1141017834")) {
       setCookie("signIn", "correct", 1);
-      location.assign("actualPage")
+      location.assign("actualPage");
     } else if ((username == "0") || (password == "0")) {
-      alert("Error: Please fill in all fields")
+      alert("Error: Please fill in all fields");
       document.querySelector("#pass").value = "";
     } else {
       alert("Error: Username or Password is invalid")
@@ -32,7 +32,7 @@ if ((failedAttempts <= 2) || (signIn !== "failed")) {
     }
   } else {
     setCookie("signIn", "failed", 0.04166666666666666666666666666667);
-    alert("You have failed 3 times to log in. Please wait 1 hour to try again. ")
+    alert("You have failed 3 times to log in. Please wait 1 hour to try again. ");
   }
 }
 
