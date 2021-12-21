@@ -3,7 +3,6 @@ let failedAttempts = 0
 function init() {
   document.querySelector("#user").addEventListener('keydown', enter);
   document.querySelector("#pass").addEventListener('keydown', enter);
-  }
 }
 
 function enter(evt) {
