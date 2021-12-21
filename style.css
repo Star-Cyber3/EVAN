@@ -27,3 +27,16 @@
 main {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
+
+#user {
+  border-radius: 5px;
+}
+
+#pass {
+  border-radius: 5px
+}
+
+#submit {
+  border: 1px solid black;
+  margin-top: 10px;
+}
