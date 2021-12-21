@@ -21,7 +21,7 @@ if ((failedAttempts <= 2) || (signIn !== "failed")) {
     // alert("username hashed is: " + username);
     if ((username == "284393587") & (password == "-1141017834")) {
       setCookie("signIn", "correct", 1);
-      location.assign("actualPage/index.html")
+      location.assign("actualPage")
     } else if ((username == "0") || (password == "0")) {
       alert("Error: Please fill in all fields")
       document.querySelector("#pass").value = "";
