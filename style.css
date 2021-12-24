@@ -37,6 +37,28 @@ main {
 }
 
 #submit {
+  border-radius: 5px;
   border: 1px solid black;
   margin-top: 10px;
+}
+
+#error  {
+  display: none;
+  text-align: center;
+  background-color: rgba(233, 5, 5, 0.281);
+  border-radius: 5px;
+  border: 2px dotted red;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+#remove {
+  position: fixed;
+  right: 30px;
+  margin-top: 11px;
+  font-size: x-large;
+  color: red;
+}
+
+#remove:hover {
+  cursor: pointer;
 }
