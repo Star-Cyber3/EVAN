@@ -4,6 +4,7 @@ main {
 }
 
 fieldset {
+  z-index: 2;
   background-image: url("images/background/mountain.jpg");
 }
 
@@ -59,4 +60,5 @@ svg {
     overflow: hidden;
     top: 0;
     left: 0;
+    z-index: -1;
 }

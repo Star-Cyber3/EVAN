@@ -1,6 +1,7 @@
-let failedAttempts = 0
+let failedAttempts;
 
 function init() {
+  failedAttempts = 0;
   document.querySelector("#remove").addEventListener('click', removeErrorMessage);
   document.querySelector("#user").addEventListener('keydown', enter);
   document.querySelector("#pass").addEventListener('keydown', enter);
@@ -25,8 +26,11 @@ function enter(evt) {
 
 function submitInfo() {
   let signIn = getCookie("signIn");
-  // alert(signIn);
-  if ((failedAttempts <= 2) || (signIn !== "failed")) {
+  /*
+  alert(signIn);
+  alert(failedAttempts);
+  */
+  if ((failedAttempts <= 2) && (signIn !== "failed")) {
     let errorPopup = document.querySelector("#error");
     errorPopup.innerHTML = "";
     let newDelete = document.createElement('SPAN');
@@ -36,8 +40,10 @@ function submitInfo() {
     errorPopup.appendChild(newDelete);
     let username = stringToHash(document.querySelector("#user").value.toLowerCase());
     let password = stringToHash(document.querySelector("#pass").value);
-    // alert("password hashed is: " + password);
-    // alert("username hashed is: " + username);
+    /*
+    alert("password hashed is: " + password);
+    alert("username hashed is: " + username);
+    */
     if ((username == "-1380259693") & (password == "-1141017834")) {
       setCookie("signIn", "correct", 1);
       location.assign("actualPage");
@@ -54,6 +60,7 @@ function submitInfo() {
       newError.innerHTML = "Error: Username or Password is invalid";
       errorPopup.appendChild(newError);
       document.querySelector("#pass").value = "";
+
       failedAttempts++
     }
   } else {
