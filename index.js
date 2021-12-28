@@ -47,7 +47,6 @@ function submitInfo() {
       errorPopup.style.display = "block";
       newError.innerHTML = "Error: Please fill in all fields";
       errorPopup.appendChild(newError);
-      document.querySelector("#pass").value = "";
     } else {
       let errorPopup = document.querySelector("#error");
       let newError = document.createElement("P");
