@@ -1,34 +1,71 @@
-let failedAttempts = 0
+let failedAttempts;
 
 function init() {
-  let isSignedIn = getCookie("signIn")
-  if (isSignedIn == "correct") {
-    location.assign("actualPage/index.html")
+  failedAttempts = 0;
+  document.querySelector("#remove").addEventListener('click', removeErrorMessage);
+  document.querySelector("#user").addEventListener('keydown', enter);
+  document.querySelector("#pass").addEventListener('keydown', enter);
+}
+
+function removeErrorMessage() {
+  let errorPopup = document.querySelector("#error");
+  errorPopup.style.display = "none";
+  errorPopup.innerHTML = "";
+  let newDelete = document.createElement('SPAN');
+  newDelete.setAttribute("id", "remove");
+  newDelete.innerHTML = "&times;";
+  newDelete.addEventListener('click', removeErrorMessage);
+  errorPopup.appendChild(newDelete);
+}
+
+function enter(evt) {
+  if (evt.keyCode === 13) {
+    submitInfo();
   }
 }
 
 function submitInfo() {
   let signIn = getCookie("signIn");
-  // alert(signIn);
-if ((failedAttempts <= 2) || (signIn !== "failed")) {
-    let username = stringToHash(document.querySelector("#user").value);
+  /*
+  alert(signIn);
+  alert(failedAttempts);
+  */
+  if ((failedAttempts <= 2) && (signIn !== "failed")) {
+    let errorPopup = document.querySelector("#error");
+    errorPopup.innerHTML = "";
+    let newDelete = document.createElement('SPAN');
+    newDelete.addEventListener('click', removeErrorMessage);
+    newDelete.setAttribute("id", "remove");
+    newDelete.innerHTML = "&times;";
+    errorPopup.appendChild(newDelete);
+    let username = stringToHash(document.querySelector("#user").value.toLowerCase());
     let password = stringToHash(document.querySelector("#pass").value);
-    // alert("password hashed is: " + password);
-    // alert("username hashed is: " + username);
-    if ((username == "284393587") & (password == "-1141017834")) {
+    /*
+    alert("password hashed is: " + password);
+    alert("username hashed is: " + username);
+    */
+    if ((username == "-1380259693") & (password == "-1141017834")) {
       setCookie("signIn", "correct", 1);
-      location.assign("actualPage/index.html")
+      location.assign("actualPage");
     } else if ((username == "0") || (password == "0")) {
-      alert("Error: Please fill in all fields")
-      document.querySelector("#pass").value = "";
+      let errorPopup = document.querySelector("#error");
+      let newError = document.createElement("P");
+      errorPopup.style.display = "block";
+      newError.innerHTML = "Error: Please fill in all fields";
+      errorPopup.appendChild(newError);
     } else {
-      alert("Error: Username or Password is invalid")
+      let errorPopup = document.querySelector("#error");
+      let newError = document.createElement("P");
+      errorPopup.style.display = "block";
+      newError.innerHTML = "Error: Username or Password is invalid";
+      errorPopup.appendChild(newError);
       document.querySelector("#pass").value = "";
+
       failedAttempts++
     }
   } else {
-    setCookie("signIn", "failed", 0.04166666666666666666666666666667);
-    alert("You have failed 3 times to log in. Please wait 1 hour to try again. ")
+    setCookie("signIn", "failed", 0.0417);
+    alert("You have failed 3 times to log in. Please wait about 1 hour to try again. ");
   }
 }
 
@@ -61,7 +98,7 @@ function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
+  for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);

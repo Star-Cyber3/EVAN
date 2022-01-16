@@ -5,22 +5,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" href="images/favicon/key.png" />
   <title>Log In</title>
 </head>
 
 <body onload="init();">
   <h1>Log In</h1>
+  <div id="error"><span id="remove">&times;</span></div>
   <fieldset>
     <legend>Log In</legend>
-    <label for="user">Username: </label><br>
-    <input type="text" id="user">
+    <label for="user">Username: </label><br />
+    <input type="text" id="user" placeholder="Enter Username...">
     <br /><label for="pass">Password: </label><br />
-    <input type="password" id="pass">
-    <input type="submit" onclick="submitInfo();" id="submit" />
+    <input type="password" id="pass" placeholder="Enter Password...">
+    <br /><input type="submit" onclick="submitInfo();" id="submit" />
   </fieldset>
   <div>
     <script src="index.js"></script>
   </div>
+  <div class="container">
+
+  <!-- Creating a SVG image -->
+  <svg viewBox="0 0 500 500"
+      preserveAspectRatio="xMinYMin meet">
+
+      <path d="M0, 100 C150, 200 350,
+          0 500, 100 L500, 00 L0, 0 Z"
+          style="stroke:none; fill:dodgerblue;">
+      </path>
+  </svg>
 </body>
 
 </html>
