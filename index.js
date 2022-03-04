@@ -44,9 +44,12 @@ function submitInfo() {
     alert("password hashed is: " + password);
     alert("username hashed is: " + username);
     */
-    if ((username == "-1380259693") & (password == "-1141017834")) {
-      setCookie("signIn", "correct", 1);
-      location.assign("actualPage");
+    if ((username == "-1380259693") && (password == "-1141017834")) {
+      setCookie("signIn", "evan", 1);
+      location.assign("ePage");
+    } else if ((username == "-999758579") && (password == "-1182574587")) {
+      setCookie("signIn", "yoma", 1);
+      location.assign("yPage");
     } else if ((username == "0") || (password == "0")) {
       let errorPopup = document.querySelector("#error");
       let newError = document.createElement("P");

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="icon" href="images/favicon/key.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
   <title>Log In</title>
 </head>
 
@@ -15,9 +16,11 @@
   <fieldset>
     <legend>Log In</legend>
     <label for="user">Username: </label><br />
-    <input type="text" id="user" placeholder="Enter Username...">
+    <i class="bi-person-badge user"></i>
+    <input type="text" id="user" class="textField" placeholder="Enter Username...">
     <br /><label for="pass">Password: </label><br />
-    <input type="password" id="pass" placeholder="Enter Password...">
+    <i class="bi-key key"></i>
+    <input type="password" id="pass" class="textField" placeholder="Enter Password...">
     <br /><input type="submit" onclick="submitInfo();" id="submit" />
   </fieldset>
   <div>
@@ -31,7 +34,7 @@
 
       <path d="M0, 100 C150, 200 350,
           0 500, 100 L500, 00 L0, 0 Z"
-          style="stroke:none; fill:dodgerblue;">
+          style="stroke:none; fill:rgba(30, 144, 255, 0.6);">
       </path>
   </svg>
 </body>
