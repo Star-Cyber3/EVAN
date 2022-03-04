@@ -5,17 +5,34 @@ main {
 
 fieldset {
   z-index: 2;
-  background-image: url("images/background/mountain.jpg");
+  ?background-image: url("images/background/mountain.jpg");
 }
 
-input {
-  border-radius: 5px;
-  background-color:rgb(238, 255, 0)
+.textField {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid black;
+  background-color:rgba(0, 0, 0, 0)
+}
+
+.textField:focus {
+/*  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid black;
+  */
+  outline: none;
+}
+
+.textField::placeholder {
+  color: black;
 }
 
 #submit {
   border: 2px solid black;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
 #error  {
@@ -61,4 +78,22 @@ svg {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+.key {
+  height: 15.2px;
+  position: relative;
+  left: 4px;
+  top: 0.6px;
+  z-index: 1;
+  border-bottom: black 2px solid;
+}
+
+.user {
+  height: 15.2px;
+  position: relative;
+  left: 4px;
+  top: 0.6px;
+  z-index: 1;
+  border-bottom: black 2px solid;
 }
