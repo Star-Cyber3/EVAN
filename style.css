@@ -5,7 +5,6 @@ main {
 
 fieldset {
   z-index: 2;
-  ?background-image: url("images/background/mountain.jpg");
 }
 
 .textField {
