@@ -1,6 +1,6 @@
 function init() {
   let isSignedIn = getCookie("signIn")
-  if (isSignedIn !== "yoma") {
+  if (isSignedIn !== "3714858") {
     location.assign("../index.html")
   }
 }
